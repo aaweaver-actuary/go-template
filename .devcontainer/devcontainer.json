@@ -1,8 +1,12 @@
 {
+  "name": "go",
   "privileged": true,
-  "dockerComposeFile": "docker-compose.yml",
+  "dockerComposeFile": "compose.yml",
   "service": "dev",
   "workspaceFolder": "/app",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/vscode-server:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -25,7 +29,7 @@
       "editor.formatOnPaste": true
       // "editor.defaultFormatter": "charliermarsh.ruff",
       // "gopls.ui_semantic_tokens": true
-      
     }
-  }
+  },
+  "postAttachCommand": "code-server --accept-server-license-terms"
 }
